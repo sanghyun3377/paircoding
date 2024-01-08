@@ -11,7 +11,7 @@ class SubWayApi {
     var source = await http.get(url);
     var json = jsonDecode(source.body);
     var data = SubWayModel.fromJson(json);
-    print(data);
+    print(json);
     return data;
   }
 }
