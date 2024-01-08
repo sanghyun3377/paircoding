@@ -9,8 +9,10 @@ class SubWayApi {
         'http://swopenapi.seoul.go.kr/api/subway/sample/json/realtimeStationArrival/0/5/$stationName';
     var url = Uri.parse(uri);
     var source = await http.get(url);
-    var json = jsonDecode(source.body) as List<dynamic>;
-    pri
-   return json.map((e) => SubWayModel.fromJson(e)).toList();
+    var json = jsonDecode(source.body);
+    var realData = json["realtimeArrivalList"] as List<dynamic>;
+    var data = realData.map((e) => SubWayModel.fromJson(e)).toList();
+    print(data);
+    return data;
   }
 }
