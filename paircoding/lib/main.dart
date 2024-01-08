@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:paircoding/source/subway_api.dart';
+import 'package:paircoding/ui/main_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -10,8 +10,8 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var suv = SubWayApi();
-    suv.getSubwayData('서울');
-    return MaterialApp();
+    return MaterialApp(
+      home: MainScreen(),
+    );
   }
 }

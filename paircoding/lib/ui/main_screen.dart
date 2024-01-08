@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:paircoding/ui/main_view_model.dart';
 import 'package:provider/provider.dart';
 
 class MainScreen extends StatefulWidget {
@@ -19,8 +20,8 @@ class _MainScreenState extends State<MainScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final viewModel = context.watch<MainViewModel>();
-    final state = viewModel.state;
+    // final viewModel = context.watch<MainVeiwModel>();
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('지하철 정보 조회'),
@@ -29,9 +30,7 @@ class _MainScreenState extends State<MainScreen> {
         children: [
           const Text('지하철 역 이름을 입력하세요.'),
           TextField(
-            onChanged: (value) {
-              viewModel.getSubwayArrivalInfoList(value);
-            },
+            onChanged: (value) {},
             controller: _textController,
             decoration: const InputDecoration(
               border: OutlineInputBorder(),
@@ -39,13 +38,7 @@ class _MainScreenState extends State<MainScreen> {
             ),
           ),
           Expanded(
-            child: ListView(
-              children: state.subwayArrivalInfoList
-                  .map(
-                    (e) => Text(e.toString()),
-              )
-                  .toList(),
-            ),
+            child: ListView(children: [Text('dd')]),
           ),
         ],
       ),
