@@ -10,7 +10,8 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    SubWayApi().getSubwayData();
+    var suv = SubWayApi();
+    suv.getSubwayData('서울');
     return MaterialApp();
   }
 }
